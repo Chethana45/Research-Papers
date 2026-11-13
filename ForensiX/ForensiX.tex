@@ -1,0 +1,260 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{array}
+
+\title{ForensiX: A Modular Read-Only Toolkit for Digital Evidence Triage, Integrity Verification, and Investigation Reporting}
+
+\author{
+\IEEEauthorblockN{Chethana Sri}
+\IEEEauthorblockA{
+Department of Computer Technology\\
+Madras Institute of Technology, Anna University\\
+Chennai, India
+}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Digital investigations require systematic methods for identifying, preserving, examining, and reporting digital evidence. This paper presents ForensiX, a Python-based digital forensics toolkit designed for preliminary digital evidence triage and integrity verification. The system provides recursive file inventory, cryptographic hashing, file-signature detection, extension mismatch identification, duplicate file detection, timestamp-based timeline generation, optional YARA rule scanning, SQLite-based case management, and hash-linked chain-of-custody records.
+
+The proposed architecture integrates these capabilities into a modular workflow that supports evidence examination and report generation. SHA-256 hashing is used to support integrity verification, while JSON, CSV, and HTML formats provide structured investigation outputs. The implementation is evaluated through functional tests covering scanning, duplicate detection, timeline generation, report generation, and custody-chain verification. ForensiX is intended as an educational and preliminary forensic triage solution rather than a replacement for validated forensic acquisition platforms.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Digital Forensics, Digital Evidence, Evidence Integrity, SHA-256, Chain of Custody, File Analysis, YARA, Forensic Investigation
+\end{IEEEkeywords}
+
+\section{Introduction}
+Digital evidence plays an important role in modern cybercrime investigations, incident response, and security analysis. Files, documents, application data, and system artefacts may contain information relevant to an investigation.
+
+Digital forensic investigation requires the identification, collection, preservation, examination, analysis, and reporting of digital evidence. NIST Special Publication 800-86 describes a structured forensic investigation process consisting of collection, examination, analysis, and reporting \cite{kent2006}. ISO/IEC 27037 provides guidelines for identifying, collecting, acquiring, and preserving digital evidence \cite{iso27037}.
+
+Traditional forensic workflows often require multiple tools for file examination, hash generation, duplicate identification, timeline construction, and evidence documentation. ForensiX addresses this problem by integrating these operations into a modular Python-based toolkit.
+
+The primary objective is to simplify preliminary evidence examination while maintaining integrity-related information and investigation records.
+
+\subsection{Research Contributions}
+The major contributions of ForensiX are:
+\begin{itemize}
+    \item Automated recursive file inventory.
+    \item Cryptographic hash generation using SHA-256.
+    \item File-signature and extension mismatch detection.
+    \item Duplicate file identification.
+    \item Timestamp-based forensic timeline generation.
+    \item Optional YARA-based pattern scanning.
+    \item SQLite-based investigation case management.
+    \item Hash-linked chain-of-custody event records.
+    \item JSON, CSV, and HTML investigation reports.
+\end{itemize}
+
+\section{Related Work}
+\subsection{Digital Forensic Investigation}
+Kent et al. presented a structured approach for integrating forensic techniques into incident response through NIST SP 800-86 \cite{kent2006}. Their work emphasizes systematic evidence collection, examination, analysis, and reporting. ISO/IEC 27043 describes principles and processes for incident investigation involving digital evidence \cite{iso27043}. ForensiX adopts a modular workflow inspired by these investigation principles.
+
+\subsection{Digital Evidence Preservation}
+ISO/IEC 27037 provides guidance for identification, collection, acquisition, and preservation of digital evidence \cite{iso27037}. NISTIR 8387 discusses digital evidence preservation considerations for evidence handlers \cite{nistir8387}. RFC 3227 provides guidelines for evidence collection and archiving, including documentation and preservation of evidence integrity \cite{rfc3227}. ForensiX supports preservation-oriented documentation through hashing and chain-of-custody records.
+
+\subsection{Cryptographic Integrity Verification}
+The Secure Hash Standard published by NIST defines cryptographic hash algorithms, including SHA-256 \cite{fips180}. ForensiX uses SHA-256 to generate file integrity hashes and support evidence verification. Hash values help identify changes in file contents. However, hashes alone do not establish the authenticity or origin of digital evidence.
+
+\subsection{Pattern-Based Detection}
+YARA is a pattern-matching technology used to identify files based on textual and binary patterns \cite{yara}. ForensiX provides optional YARA integration to support rule-based examination of evidence files. YARA matches are treated as indicators requiring manual investigation rather than definitive classifications.
+
+\subsection{Forensic Tool Testing}
+The NIST Computer Forensic Tool Testing program provides methodologies for evaluating forensic tools and their capabilities \cite{cftt}. SWGDE publishes best-practice guidance for forensic acquisition and examination \cite{swgdeacq,swgdeexam}. The functional tests performed on ForensiX are project-level tests and do not constitute independent forensic tool validation.
+
+\section{Problem Statement}
+Digital evidence examination involves several repetitive operations, including file inventory, hash computation, duplicate detection, metadata examination, and investigation documentation. When these operations are performed independently, correlating results and maintaining consistent investigation records can become difficult.
+
+The problem addressed by ForensiX is the absence of a compact, integrated workflow for preliminary file-based digital evidence triage and investigation documentation.
+
+\section{Objectives}
+The objectives of the proposed system are:
+\begin{enumerate}
+    \item To automate recursive evidence-folder scanning.
+    \item To generate cryptographic hashes for integrity checking.
+    \item To identify supported file-signature mismatches.
+    \item To detect duplicate files using content hashes.
+    \item To construct chronological views using file timestamps.
+    \item To support optional YARA rule-based scanning.
+    \item To maintain investigation records using SQLite.
+    \item To generate hash-linked custody event records.
+    \item To export investigation results in multiple formats.
+\end{enumerate}
+
+\section{Proposed System}
+ForensiX is a modular digital evidence triage toolkit implemented using Python. The system accepts an authorized local evidence directory as input and performs multiple examination operations. The major modules include:
+
+\subsection{File Scanner}
+The scanner recursively examines accessible files and collects metadata such as file paths, sizes, and timestamps. The scanner is designed not to intentionally modify the original evidence files.
+
+\subsection{Hash Generation Module}
+The hash module calculates cryptographic digests for evidence files. Supported algorithms include SHA-256, SHA-1, and MD5. SHA-256 is used as the primary integrity reference.
+
+\subsection{File Signature Analysis}
+The signature analysis module examines recognized file signatures and compares them with expected file extensions. Potential mismatches are flagged for examiner review.
+
+\subsection{Duplicate Detection}
+Duplicate files are identified by comparing their content hashes. Files with matching cryptographic hashes are grouped for further examination.
+
+\subsection{Timeline Generation}
+The timeline module organizes available filesystem timestamps into chronological order. This helps examiners review file activity during preliminary investigations.
+
+\subsection{YARA Integration}
+ForensiX optionally integrates YARA for pattern-based file scanning. Examiner-supplied rules can be used to identify potentially relevant file patterns.
+
+\subsection{Case Management}
+SQLite is used to store investigation case information and custody event records. Each custody event is linked to the previous event using a cryptographic digest. This provides a tamper-evident event sequence, but does not provide digital signatures or external trusted timestamping.
+
+\subsection{Report Generation}
+Investigation results can be exported in JSON, CSV, and HTML formats.
+
+\section{System Architecture}
+The proposed architecture consists of an examiner interface, command dispatcher, evidence scanner, analysis modules, result aggregator, database, and report-generation components.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.96\textwidth]{architecture.png}
+\caption{High-level system architecture of ForensiX.}
+\label{fig:architecture}
+\end{figure*}
+
+\section{Methodology}
+The ForensiX investigation workflow consists of five major stages.
+
+\subsection{Case Preparation}
+The examiner creates an investigation case and records the relevant case information.
+
+\subsection{Evidence Inventory}
+The system recursively scans the authorized evidence directory and collects available file metadata.
+
+\subsection{Evidence Examination}
+The system calculates cryptographic hashes, examines supported file signatures, identifies duplicate files, and constructs a chronological timeline.
+
+\subsection{Optional Rule-Based Scanning}
+YARA rules can optionally be applied to evidence files to identify matching patterns.
+
+\subsection{Documentation and Reporting}
+The system stores case information and custody events in SQLite and generates investigation reports.
+
+\section{Implementation}
+ForensiX is implemented using Python. The core implementation uses Python standard-library functionality for file operations, hashing, command-line processing, and SQLite database management.
+
+The major technologies used are:
+\begin{itemize}
+    \item Python
+    \item SQLite
+    \item SHA-256
+    \item YARA (optional)
+    \item pytsk3 (optional limited disk-image metadata support)
+    \item JSON
+    \item CSV
+    \item HTML
+    \item Pytest / unittest
+\end{itemize}
+
+\section{Experimental Evaluation}
+The prototype was evaluated using a functional test suite. The tests cover the following operations. The development test run covered five test functions and all five passed. These tests demonstrate the operation of selected features on the supplied test fixtures. They do not establish performance, scalability, independent forensic validation, or legal admissibility.
+
+\begin{table}[!t]
+\caption{Functional Test Results}
+\label{tab:tests}
+\centering
+\begin{tabular}{|p{0.70\columnwidth}|c|}
+\hline
+\textbf{Test Case} & \textbf{Result}\\
+\hline
+File scanning and hash metadata & Pass\\
+File-signature mismatch detection & Pass\\
+Duplicate file grouping & Pass\\
+Timeline generation & Pass\\
+HTML report generation & Pass\\
+Custody-chain verification & Pass\\
+\hline
+\end{tabular}
+\end{table}
+
+The current disk-image integration is limited to basic metadata listing. It does not provide complete filesystem traversal or deleted-file recovery.
+
+\section{Security and Limitations}
+ForensiX is intended for use only on evidence that the examiner is authorized to inspect. The source-folder workflow is designed not to intentionally modify evidence files.
+
+However, the system does not implement:
+\begin{itemize}
+    \item Hardware or software write blocking.
+    \item Full physical disk acquisition.
+    \item Deleted-file recovery.
+    \item Memory forensics.
+    \item Network packet analysis.
+    \item Digitally signed custody records.
+    \item External trusted timestamping.
+    \item Comprehensive file-signature coverage.
+\end{itemize}
+
+The hash-linked custody log can detect changes to the recorded event sequence during verification, but an attacker with sufficient database access could replace the database and recompute the chain. The prototype has not undergone independent forensic tool validation and should not be described as court-certified.
+
+\section{Conclusion}
+This paper presented ForensiX, a modular Python-based digital forensics toolkit for preliminary evidence triage, integrity verification, and investigation documentation. The system integrates recursive file scanning, cryptographic hashing, file-signature analysis, duplicate detection, timeline generation, optional YARA scanning, SQLite case management, and report generation.
+
+The functional evaluation demonstrates the operation of the implemented modules on the supplied test data. Future work includes independent forensic validation, performance benchmarking, expanded file-signature coverage, complete disk-image analysis, signed custody records, and enhanced investigation audit capabilities.
+
+\section*{Acknowledgment}
+The author acknowledges the open-source communities and standards organizations whose documentation informed the development of this project.
+
+\begin{thebibliography}{15}
+
+\bibitem{kent2006}
+K. Kent, S. Chevalier, T. Grance, and H. Dang, ``Guide to Integrating Forensic Techniques into Incident Response,'' NIST Special Publication 800-86, 2006. doi: 10.6028/NIST.SP.800-86.
+
+\bibitem{iso27037}
+ISO/IEC 27037:2012, ``Guidelines for Identification, Collection, Acquisition and Preservation of Digital Evidence,'' International Organization for Standardization, 2012.
+
+\bibitem{iso27042}
+ISO/IEC 27042:2015, ``Guidelines for the Analysis and Interpretation of Digital Evidence,'' International Organization for Standardization, 2015.
+
+\bibitem{iso27043}
+ISO/IEC 27043:2015, ``Incident Investigation Principles and Processes,'' International Organization for Standardization, 2015.
+
+\bibitem{nistir8387}
+B. Guttman, D. R. White, S. Williams, and T. Walraven, ``Digital Evidence Preservation: Considerations for Evidence Handlers,'' NISTIR 8387, 2022. doi: 10.6028/NIST.IR.8387.
+
+\bibitem{fips180}
+NIST, ``Secure Hash Standard,'' FIPS PUB 180-4, 2015. doi: 10.6028/NIST.FIPS.180-4.
+
+\bibitem{rfc3227}
+D. Brezinski and T. Killalea, ``Guidelines for Evidence Collection and Archiving,'' RFC 3227, 2002. Available: \url{https://www.rfc-editor.org/rfc/rfc3227}.
+
+\bibitem{swgdeacq}
+SWGDE, ``Best Practices for Computer Forensic Acquisitions,'' 17-F-002, Version 2.1. Available: \url{https://www.swgde.org/}.
+
+\bibitem{swgdeexam}
+SWGDE, ``Best Practices for Computer Forensic Examinations,'' 18-F-001, Version 2.0. Available: \url{https://www.swgde.org/}.
+
+\bibitem{swgdetesting}
+SWGDE, ``Minimum Requirements for Testing Tools Used in Digital and Multimedia Forensics.'' Available: \url{https://www.swgde.org/}.
+
+\bibitem{yara}
+VirusTotal, ``YARA Documentation.'' Available: \url{https://yara.readthedocs.io/}.
+
+\bibitem{cftt}
+NIST, ``Computer Forensic Tool Testing (CFTT) Program.'' Available: \url{https://www.nist.gov/itl/csd/secure-systems-and-applications/computer-forensics-tool-testing-program-cftt}.
+
+\bibitem{garfinkel2010}
+S. L. Garfinkel, ``Digital forensics research: The next 10 years,'' Digital Investigation, vol. 7, pp. S64--S73, 2010. doi: 10.1016/j.diin.2010.05.009.
+
+\bibitem{sqlite}
+SQLite Consortium, ``SQLite Documentation.'' Available: \url{https://www.sqlite.org/docs.html}.
+
+\bibitem{pythonhashlib}
+Python Software Foundation, ``hashlib -- Secure hashes and message digests.'' Available: \url{https://docs.python.org/3/library/hashlib.html}.
+
+\end{thebibliography}
+
+\end{document}
