@@ -4,14 +4,6 @@
 
 The project focuses on modular kernel development, incorporating a Virtual File System (VFS), an in-memory RAMFS backend, TAR/USTAR archive handling, filesystem-related kernel interfaces, and a kernel-resident command shell.
 
----
-
-## Architecture
-
-![KernelX System Architecture](KernelX_Architecture_Diagram.png)
-
-*Figure: Modular architecture of the KernelX operating-system kernel.*
-
 ## Core Components
 
 - **Boot and Kernel Initialization** — Establishes the initial execution environment for the kernel.
@@ -39,8 +31,6 @@ The project focuses on modular kernel development, incorporating a Virtual File 
 
 The project was developed incrementally, with individual kernel and filesystem components tested before integration.
 
-Reported validation results:
-
 | Validation Activity | Result |
 |---|---|
 | C compilation and 32-bit ELF linking | Successful |
@@ -56,7 +46,7 @@ Reported validation results:
 
 The accompanying research paper documents:
 
-- KernelX architecture and subsystem organization
+- KernelX design and implementation
 - Virtual filesystem design
 - RAMFS implementation
 - TAR/USTAR archive handling
