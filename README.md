@@ -1,166 +1,179 @@
-# ✦ RESEARCH VAULT
-### An Exploration of Ideas, Engineering, and Scientific Discovery.
+# ✦ THE RESEARCH VAULT
+
+### A SPACE FOR IDEAS, DISCOVERY & INNOVATION.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ACADEMIC-RESEARCH-8B7AB8?style=for-the-badge&labelColor=171923" />
-  <img src="https://img.shields.io/badge/COMPUTER-SCIENCE-7AA2C9?style=for-the-badge&labelColor=171923" />
-  <img src="https://img.shields.io/badge/ENGINEERING-AND-INNOVATION?style=for-the-badge&color=C49A6C&labelColor=171923" />
+  <img src="https://img.shields.io/badge/✦_ACADEMIC-RESEARCH-9B72CF?style=for-the-badge&labelColor=171426" />
+  <img src="https://img.shields.io/badge/◈_SCIENCE-EXPLORATION-62A6D8?style=for-the-badge&labelColor=101D30" />
+  <img src="https://img.shields.io/badge/⌘_ENGINEERING-INNOVATION-E5A45B?style=for-the-badge&labelColor=302016" />
+  <img src="https://img.shields.io/badge/⌬_KNOWLEDGE-EXPANSION-65BFA5?style=for-the-badge&labelColor=142C28" />
 </p>
 
 <p align="center">
-  <i>Ideas begin with curiosity. Research turns curiosity into understanding.</i>
+  <i>Beyond what is known lies everything waiting to be discovered.</i>
 </p>
 
 ---
 
-## ◈ About This Repository
+## 01 / THE VISION
 
-Welcome to my **Research Vault** — a dedicated space for documenting my academic research, technical investigations, engineering explorations, and ideas.
+Welcome to **The Research Vault** — a growing collection of scientific curiosity, technical investigations, engineering ideas, and academic explorations.
 
-This repository represents my journey of exploring problems beyond conventional classroom learning, understanding the science behind complex systems, and investigating how technology can contribute to meaningful solutions.
+This space represents an ongoing journey of understanding how things work, questioning existing approaches, exploring unfamiliar concepts, and transforming ideas into meaningful knowledge.
 
-My research interests span multiple areas of Computer Science and interdisciplinary engineering, bringing together theoretical foundations, computational approaches, mathematical reasoning, and practical implementation.
+I believe research is more than collecting information or writing papers. It is about identifying problems, discovering connections, testing possibilities, and developing a deeper understanding of the world through technology and science.
 
-Rather than treating research as just a written document, I see it as a continuous process of questioning, experimenting, analyzing, and improving.
-
----
-
-## ⌘ Research Collection
-
-A growing collection of research work across different technical domains.
-
-### 01 — FlightLab
-**Aircraft Intelligence | Aerodynamics | Computational Simulation**
-
-An exploration of aircraft flight fundamentals through mathematical analysis, aerodynamic principles, and computational modeling.
-
-**Areas of exploration**
-- Fundamental forces of flight: Lift, Drag, Thrust, and Weight.
-- Aircraft flight dynamics and performance.
-- Longitudinal, lateral, and directional stability.
-- Aerodynamic calculations and mathematical modeling.
-- Interactive aircraft simulation concepts.
-
-📂 [Explore FlightLab Research](./FlightLab/)
-
-🔗 [Related Implementation — FlightLab X](https://github.com/Chethana45/FlightLab)
+**Curiosity is the starting point. Discovery is the destination.**
 
 ---
 
-### 02 — NetBuilder
-**Computer Networks | Network Topology | Interactive Systems**
+## 02 / RESEARCH DIMENSIONS
 
-An exploration of computer networking concepts through interactive network topology modeling and simulation.
+<p align="center">
+  <img src="https://img.shields.io/badge/01-Artificial_Intelligence-9B72CF?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/02-Computational_Science-568CCB?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/03-Systems_Engineering-45A99A?style=for-the-badge" />
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/04-Aerospace_Exploration-D58A57?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/05-Mathematical_Modeling-CB719B?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/06-Emerging_Technologies-8294C9?style=for-the-badge" />
+</p>
 
-**Areas of exploration**
-- Network topology representation.
-- Network devices and their interconnections.
-- Interactive topology construction.
-- Network simulation and packet transmission.
-- Full-stack architecture for network visualization.
+Areas of exploration include:
 
-📂 [Explore NetBuilder Research](./NetBuilder/)
-
-🔗 [Related Project — NetBuilder](https://github.com/Chethana45/NetBuilder)
-
----
-
-## ◈ Research Philosophy
-
-I believe meaningful research begins by asking better questions.
-
-My approach to research revolves around five principles:
-
-| Principle | Approach |
-|---|---|
-| Curiosity | Explore questions beyond predefined boundaries. |
-| Understanding | Build strong theoretical foundations. |
-| Investigation | Analyze problems through mathematical and computational methods. |
-| Implementation | Connect theoretical ideas with practical systems. |
-| Improvement | Refine approaches through experimentation and evaluation. |
+- **Artificial Intelligence & Machine Learning** — Intelligent computation, predictive models, learning systems, and algorithmic approaches.
+- **Computer Science & Systems** — Operating systems, architecture, networking, and software infrastructure.
+- **Computational Engineering** — Mathematical simulations, numerical methods, and engineering models.
+- **Aerospace & Flight Sciences** — Aerodynamics, flight mechanics, stability, and aircraft performance.
+- **Data & Mathematical Sciences** — Statistical reasoning, optimization, analytical methods, and computational mathematics.
+- **Emerging Technologies** — Exploring new ideas at the intersection of science, computing, and innovation.
 
 ---
 
-## ⌬ Areas of Interest
+## 03 / THE RESEARCH PROCESS
 
-My current and evolving areas of academic and technical interest include:
-
-- **Artificial Intelligence & Machine Learning** — Intelligent systems, predictive modeling, and computational learning.
-- **Computer Vision** — Image processing, visual perception, and object detection.
-- **Computer Networks** — Network architecture, communication, and simulation.
-- **Aerospace Computing** — Flight dynamics, aerodynamic modeling, and aircraft simulation.
-- **Software Engineering** — System architecture, interactive applications, and scalable software.
-- **Computational Modeling** — Translating mathematical concepts into executable models.
-
----
-
-## ⚙️ Research Workflow
-
-My general approach to investigating a technical problem:
+<p align="center">
+  <img src="https://img.shields.io/badge/01-QUESTION-9B72CF?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/02-INVESTIGATE-568CCB?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/03-ANALYZE-45A99A?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/04-EXPERIMENT-D58A57?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/05-DISCOVER-CB719B?style=for-the-badge" />
+</p>
 
 ```text
-       PROBLEM IDENTIFICATION
-                 |
-                 ▼
-       LITERATURE EXPLORATION
-                 |
-                 ▼
-       THEORETICAL ANALYSIS
-                 |
-                 ▼
-       MATHEMATICAL MODELING
-                 |
-                 ▼
-       COMPUTATIONAL APPROACH
-                 |
-                 ▼
-       IMPLEMENTATION & TESTING
-                 |
-                 ▼
-       ANALYSIS & DOCUMENTATION
-                 |
-                 ▼
-          FUTURE DIRECTIONS
+                 CURIOSITY
+                     |
+                     ▼
+             PROBLEM IDENTIFICATION
+                     |
+                     ▼
+              LITERATURE REVIEW
+                     |
+                     ▼
+             THEORETICAL ANALYSIS
+                     |
+                     ▼
+             COMPUTATIONAL DESIGN
+                     |
+                     ▼
+              EXPERIMENTATION
+                     |
+                     ▼
+             RESULTS & EVALUATION
+                     |
+                     ▼
+              DOCUMENTATION
+                     |
+                     ▼
+               NEW QUESTIONS
 ```
 
----
-
-## ◇ Beyond the Papers
-
-Research does not end with documentation.
-
-Whenever possible, I aim to connect my investigations with practical software implementations, simulations, and experiments.
-
-This repository will evolve alongside my academic journey, with new research documents, supporting materials, technical references, and implementation links.
+Every investigation is an opportunity to learn something new, challenge an assumption, or uncover a better approach.
 
 ---
 
-## 👩‍💻 Researcher
+## 04 / BEYOND CONVENTIONAL LEARNING
+
+My approach combines multiple dimensions of technical exploration:
+
+| Dimension | Focus |
+|:---|:---|
+| Theoretical Research | Understanding fundamental concepts and existing knowledge |
+| Scientific Investigation | Exploring questions through evidence and reasoning |
+| Mathematical Analysis | Developing models and analytical solutions |
+| Computational Exploration | Using algorithms, simulations, and software |
+| Experimental Evaluation | Testing approaches and interpreting outcomes |
+| Technical Documentation | Communicating findings clearly and systematically |
+
+The goal is not simply to understand *what* something does, but to investigate *why* it works and *how* it can be improved.
+
+---
+
+## 05 / RESEARCH PRINCIPLES
+
+<p align="center">
+  <img src="https://img.shields.io/badge/CURIOSITY-Explore_without_limits-9B72CF?style=flat-square" />
+  <img src="https://img.shields.io/badge/RIGOR-Question_every_assumption-568CCB?style=flat-square" />
+  <img src="https://img.shields.io/badge/CREATIVITY-Think_beyond_conventions-45A99A?style=flat-square" />
+  <img src="https://img.shields.io/badge/INTEGRITY-Let_evidence_lead-D58A57?style=flat-square" />
+</p>
+
+- **Question everything:** Never accept an idea without understanding its foundations.
+- **Think independently:** Explore alternative perspectives and approaches.
+- **Follow the evidence:** Build conclusions through reasoning and experimentation.
+- **Connect disciplines:** Look for relationships between seemingly unrelated fields.
+- **Keep evolving:** Treat every result as a starting point for further exploration.
+
+---
+
+## 06 / THE KNOWLEDGE ARCHIVE
+
+This repository will gradually evolve into a structured archive of:
+
+- Academic research papers and technical reports.
+- Literature reviews and scientific references.
+- Mathematical derivations and analytical studies.
+- Engineering investigations and computational experiments.
+- Research notes, observations, and supporting documentation.
+- Ideas and directions for future exploration.
+
+Each contribution represents another step in a continuous process of learning and discovery.
+
+---
+
+## 07 / THE RESEARCHER
+
+<p align="center">
+  <img src="https://img.shields.io/badge/RESEARCHER-Chethana_Sri-9B72CF?style=for-the-badge&labelColor=171426" />
+</p>
 
 **Chethana Sri**
 
-Computer Science and Engineering
+Computer Science Student  
+Madras Institute of Technology · Anna University
 
-Interested in exploring the intersection of Computer Science, Artificial Intelligence, Computational Modeling, and Interdisciplinary Engineering.
+Interested in the intersection of Computer Science, Artificial Intelligence, Mathematical Sciences, Computational Engineering, and emerging technologies.
 
-<p align="left">
+<p align="center">
   <a href="https://github.com/Chethana45">
-    <img src="https://img.shields.io/badge/GitHub-Chethana45-171923?style=for-the-badge&logo=github" />
-  </a>
-  <a href="https://github.com/Chethana45/FlightLab">
-    <img src="https://img.shields.io/badge/FlightLab-Explore-8B7AB8?style=for-the-badge&logo=github" />
-  </a>
-  <a href="https://github.com/Chethana45/NetBuilder">
-    <img src="https://img.shields.io/badge/NetBuilder-Explore-7AA2C9?style=for-the-badge&logo=github" />
+    <img src="https://img.shields.io/badge/GitHub-Explore_Profile-171923?style=for-the-badge&logo=github" />
   </a>
 </p>
 
 ---
 
 <p align="center">
-  <b>RESEARCH VAULT</b>
-  <br/>
-  <i>Think deeply. Investigate relentlessly. Build intelligently.</i>
+  <img src="https://img.shields.io/badge/THINK-9B72CF?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/QUESTION-568CCB?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/EXPLORE-45A99A?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/DISCOVER-D58A57?style=for-the-badge" />
+</p>
+
+<h3 align="center">✦ THE RESEARCH VAULT ✦</h3>
+
+<p align="center">
+  <i>Where curiosity meets computation, and ideas become discoveries.</i>
   <br/><br/>
-  ✦ A continuous journey of learning and discovery. ✦
+  <b>Think beyond boundaries. Discover beyond expectations.</b>
 </p>
